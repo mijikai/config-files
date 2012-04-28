@@ -1,6 +1,9 @@
 set nocompatible
 filetype off
-call pathogen#infect()
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
+runtime vim-bundles.vim
+
 if has("win32")
     let g:skip_loading_mswin=1
     source $VIM\_vimrc
