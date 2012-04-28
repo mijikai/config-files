@@ -14,5 +14,3 @@ Bundle 'tpope/vim-pathogen'
 Bundle 'tpope/vim-surround'
 Bundle 'vim-scripts/pep8'
 Bundle 'wlangstroth/vim-racket'
-
-" vim:ft=vim
