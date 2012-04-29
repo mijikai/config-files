@@ -40,6 +40,25 @@ set mouse-=a
 set foldmethod=indent
 set foldlevel=99
 
+" Use command line window 
+set cmdwinheight=3
+set cedit=<c-f>
+nnoremap : :<c-f>i
+nnoremap / /<c-f>i
+nnoremap ? ?<c-f>i
+" Use command line
+nnoremap q: :
+nnoremap q/ /
+nnoremap q? ?
+augroup command_win
+    au!
+    " Mapping for quitting command line window
+    au CmdwinEnter * nnoremap <buffer> <c-c> <esc>o<cr>
+    au CmdwinEnter * inoremap <buffer> <c-c> <esc>o<cr>
+    au CmdwinEnter * onoremap <buffer> <c-c> <esc>o<cr>
+    au CmdwinEnter * inoremap <buffer> <up> i<c-x><c-l>
+augroup END
+
 let g:solarized_termtrans=1
 set background=dark
 colorscheme solarized
