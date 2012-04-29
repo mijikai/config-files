@@ -53,6 +53,5 @@ let g:miniBufExplMapCTabSwitchBufs = 1
 let g:miniBufExplModSelTarget = 1 
 let g:miniBufExplForceSyntaxEnable = 1
 
-au FileType python set omnifunc=pythoncomplete#Complete
 set completeopt=menuone,longest,preview
 let g:SuperTabDefaultCompletionType="context"
