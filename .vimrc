@@ -56,7 +56,6 @@ augroup command_win
     au CmdwinEnter * nnoremap <buffer> <c-c> <esc>o<cr>
     au CmdwinEnter * inoremap <buffer> <c-c> <esc>o<cr>
     au CmdwinEnter * onoremap <buffer> <c-c> <esc>o<cr>
-    au CmdwinEnter * inoremap <buffer> <up> i<c-x><c-l>
 augroup END
 
 let g:solarized_termtrans=1
