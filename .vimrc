@@ -73,3 +73,5 @@ let g:miniBufExplForceSyntaxEnable = 1
 
 set completeopt=menuone,longest,preview
 let g:SuperTabDefaultCompletionType="context"
+
+hi link EasyMotionTarget ErrorMsg
