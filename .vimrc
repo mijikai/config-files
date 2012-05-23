@@ -12,9 +12,9 @@ if has("win32")
     set noincsearch
 elseif has("unix")
     runtime ftplugin/man.vim
+    set guifont=Monospace\ 9
 endif
 if has("gui_running")
-    set guifont=Monospace\ 9
     set guicursor+=a:blinkwait0
 endif
 
