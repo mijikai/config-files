@@ -16,6 +16,8 @@ elseif has("unix")
 endif
 if has("gui_running")
     set guicursor+=a:blinkwait0  " Disable blinking
+    set guioptions-=m  " Hide menubar
+    set guioptions-=T " Hide toolbar
 endif
 
 filetype on
