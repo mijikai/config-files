@@ -1,0 +1,6 @@
+neww 'exec cmus'
+neww 'exec vim'
+neww 'exec ipython3'
+neww 'exec racket'
+neww 'exec ghci'
+select-window -t 0
