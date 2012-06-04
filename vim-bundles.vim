@@ -5,6 +5,7 @@ Bundle 'gmarik/vundle'
 " My other bundles
 Bundle 'Lokaltog/vim-easymotion'
 Bundle 'altercation/vim-colors-solarized'
+Bundle 'chrisbra/SudoEdit.vim'
 Bundle 'ervandew/supertab'
 Bundle 'fholgado/minibufexpl.vim'
 Bundle 'msanders/snipmate.vim'
