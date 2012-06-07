@@ -1,3 +1,3 @@
 # period   delay job-id     command
-  @weekly 0     firefox_bk /home/lester/Admin/firefoxbackup/script/firefox_optimize.sh && /home/lester/Admin/firefoxbackup/script/firefox_backup.sh
+  7       0     firefox_bk sh -c "cd /home/lester/Admin/firefoxbackup/script; ./firefox_optimize.sh && ./firefox_backup.sh"
 
