@@ -25,6 +25,7 @@ filetype indent on
 filetype plugin on
 syntax on
 
+set lazyredraw  " Do not simulate command record
 set smartindent  " Indent automatically
 set shiftwidth=4  " One tab equals four spaces
 set expandtab  " Convert tab to spaces
