@@ -1,5 +1,4 @@
-" let Vundle manage Vundle
-" required!
+" Plugin manager
 Bundle 'gmarik/vundle'
 
 " My other bundles
