@@ -48,20 +48,6 @@ set foldlevel=99
 
 set cmdwinheight=3  " Make the command line window occupy three lines
 set cedit=<c-f>  " Have this key display the command line window
-nnoremap : :<c-f>i
-nnoremap / /<c-f>i
-nnoremap ? ?<c-f>i
-" Use command line
-nnoremap q: :
-nnoremap q/ /
-nnoremap q? ?
-augroup command_win
-    au!
-    " Mapping for quitting command line window
-    au CmdwinEnter * nnoremap <buffer> <c-c> <esc>o<cr>
-    au CmdwinEnter * inoremap <buffer> <c-c> <esc>o<cr>
-    au CmdwinEnter * onoremap <buffer> <c-c> <esc>o<cr>
-augroup END
 
 let g:solarized_termtrans=1  " Make sure that the background transparency is used
 set background=dark  " Make use of the dark colorset of the current theme
