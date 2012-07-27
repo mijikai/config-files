@@ -55,6 +55,8 @@ colorscheme solarized  " Use solarized for editing
 
 " Display or hide the history of the undos
 nnoremap <Leader>u :GundoToggle<CR>
+" Change mapping for window command leader
+nnoremap ;w <c-w>
 
 " MiniBufExplorer config
 let g:miniBufExplModSelTarget = 1
