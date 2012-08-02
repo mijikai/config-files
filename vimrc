@@ -68,6 +68,6 @@ let g:SuperTabDefaultCompletionType="context"  " Make a contextual completion
 
 " Make the characters in to find highlight with the color of ErrorMsg.
 hi link EasyMotionTarget ErrorMsg
-" Disable shade because text between the cursor and the destination blends with
-" the background
+" Shade characters within the search space
+hi link EasyMotionShade Comment
 let g:EasyMotion_do_shade = 0
