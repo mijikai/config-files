@@ -70,4 +70,5 @@ let g:SuperTabDefaultCompletionType="context"  " Make a contextual completion
 hi link EasyMotionTarget ErrorMsg
 " Shade characters within the search space
 hi link EasyMotionShade Comment
-let g:EasyMotion_do_shade = 0
+noremap ;f <Nop>
+let g:EasyMotion_leader_key = ';f'
