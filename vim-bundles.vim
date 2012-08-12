@@ -22,3 +22,5 @@ Bundle 'tpope/vim-unimpaired'
 Bundle 'vim-scripts/pep8'
 Bundle 'wlangstroth/vim-racket'
 Bundle 'zaiste/tmux.vim'
+
+Bundle 'git://vim-latex.git.sourceforge.net/gitroot/vim-latex/vim-latex' 
