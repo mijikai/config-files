@@ -83,3 +83,20 @@ hi link EasyMotionTarget ErrorMsg
 hi link EasyMotionShade Comment
 noremap ;f <Nop>
 let g:EasyMotion_leader_key = ';f'
+
+
+"""""""""""""""""""""""""""
+" vim-slime configuration "
+"""""""""""""""""""""""""""
+let g:slime_target = 'tmux'
+
+" IPython has an error when it is pastedirectly so have a toggle if one will
+" use ipython for interaction
+function! Slime_ipython_toggle()
+    if !exists('g:slime_python_ipython') || g:slime_python_ipython == 0
+        let g:slime_python_ipython = 1
+    else
+        unlet g:slime_python_ipython
+    endif
+endfunction
+map <C-c>i :silent! call Slime_ipython_toggle()<CR>
