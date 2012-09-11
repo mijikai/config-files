@@ -53,12 +53,19 @@ let g:solarized_termtrans=1  " Make sure that the background transparency is use
 set background=dark  " Make use of the dark colorset of the current theme
 colorscheme solarized  " Use solarized for editing
 
+
+"""""""""""""""""""""""
+" Gundo configuration "
+"""""""""""""""""""""""
 " Display or hide the history of the undos
 nnoremap <Leader>u :GundoToggle<CR>
 " Change mapping for window command leader
 nnoremap ;w <c-w>
 
-" MiniBufExplorer config
+
+"""""""""""""""""""""""""""""""""
+" MiniBufExplorer configuration "
+"""""""""""""""""""""""""""""""""
 let g:miniBufExplModSelTarget = 1
 let g:miniBufExplForceSyntaxEnable = 1  " Force highlighting
 let g:miniBufExplCloseOnSelect = 1  " Close when selected a buffer
@@ -66,6 +73,10 @@ let g:miniBufExplCloseOnSelect = 1  " Close when selected a buffer
 set completeopt=menu,longest,preview  " Display a menu for autocompletion
 let g:SuperTabDefaultCompletionType="context"  " Make a contextual completion
 
+
+""""""""""""""""""""""""""""
+" EasyMotion configuration "
+""""""""""""""""""""""""""""
 " Make the characters in to find highlight with the color of ErrorMsg.
 hi link EasyMotionTarget ErrorMsg
 " Shade characters within the search space
