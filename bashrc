@@ -101,6 +101,27 @@ fi
 if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
     . /etc/bash_completion
 fi
+
+# remove all the duplicate lines from history preserving latest
+# commands
+remove_dup="$(cat <<python
+from collections import OrderedDict
+from os.path import expanduser
+
+hist_path = expanduser('~/.bash_history')
+with open(hist_path) as hist:
+    lines = hist.readlines()
+
+no_dup = OrderedDict()
+while lines:
+    no_dup[lines.pop()] = ''
+with open(hist_path, 'w') as hist:
+    hist.writelines(reversed(no_dup))
+python
+)"
+python3 -c "$remove_dup"
+unset remove_dup
+
 set -o vi
 
 fortune -c
