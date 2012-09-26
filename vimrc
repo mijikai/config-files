@@ -7,6 +7,9 @@ exec 'set rtp+=' . bundle_folder . '/vundle'
 call vundle#rc(bundle_folder)  " Initialize vundle for loading of other plugins
 runtime vim-bundles.vim  " Load the plugins
 
+exec 'set rtp+=' . bundle_folder . '/vim-pathogen/'
+call pathogen#infect()
+
 if has("win32")
     let g:skip_loading_mswin=1  " Disable the specific configuration for mswin
     source $VIM\_vimrc  " Load the default configuration for windows
