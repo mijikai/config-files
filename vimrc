@@ -103,3 +103,8 @@ function! Slime_ipython_toggle()
     endif
 endfunction
 map <C-c>i :silent! call Slime_ipython_toggle()<CR>
+
+""""""""""""""""""""""""""""""
+" javacomplete configuration "
+""""""""""""""""""""""""""""""
+autocmd Filetype java setlocal omnifunc=javacomplete#Complete

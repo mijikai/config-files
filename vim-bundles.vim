@@ -22,6 +22,7 @@ Bundle 'tpope/vim-repeat'
 Bundle 'tpope/vim-surround'
 Bundle 'tpope/vim-unimpaired'
 Bundle 'vim-scripts/pep8'
+Bundle 'vim-scripts/javacomplete'
 Bundle 'wlangstroth/vim-racket'
 Bundle 'zaiste/tmux.vim'
 
