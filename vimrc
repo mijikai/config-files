@@ -1,18 +1,9 @@
-set nocompatible  " Disable compatibility with vi so that plugins will work
-filetype off  " Disable first filetype detection for vundle plugin
-
-" Add vundle to the runtime path using the user's vimfiles
-let bundle_folder=split(&rtp, ',')[0] . '/bundle'
-exec 'set rtp+=' . bundle_folder . '/vundle'
-call vundle#rc(bundle_folder)  " Initialize vundle for loading of other plugins
-runtime vim-bundles.vim  " Load the plugins
-
-exec 'set rtp+=' . bundle_folder . '/vim-pathogen/'
-call pathogen#infect()
-
 if has("win32")
     let g:skip_loading_mswin=1  " Disable the specific configuration for mswin
-    source $VIM\_vimrc  " Load the default configuration for windows
+    if !exists('g:loaded_win_vimrc')
+        let g:loaded_win_vimrc = 1
+        source $VIM\_vimrc  " Load the default configuration for windows
+    endif
     set guifont=Consolas:h9:cANSI  " Set the font for the gui
     set nohlsearch  " Do not highlight search
     set noincsearch " Do not move the cursor to the next match
@@ -25,6 +16,18 @@ if has("gui_running")
     set guioptions-=m  " Hide menubar
     set guioptions-=T " Hide toolbar
 endif
+
+set nocompatible  " Disable compatibility with vi so that plugins will work
+filetype off  " Disable first filetype detection for vundle plugin
+
+" Add vundle to the runtime path using the user's vimfiles
+let bundle_folder=split(&rtp, ',')[0] . '/bundle'
+exec 'set rtp+=' . bundle_folder . '/vundle'
+call vundle#rc(bundle_folder)  " Initialize vundle for loading of other plugins
+runtime vim-bundles.vim  " Load the plugins
+
+exec 'set rtp+=' . bundle_folder . '/vim-pathogen/'
+call pathogen#infect()
 
 filetype on
 filetype indent on
