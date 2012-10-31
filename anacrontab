@@ -1,4 +1,4 @@
 # period   delay job-id     command
-  7       0     firefox_bk sh -c "cd /home/lester/Admin/firefoxbackup/script; ./firefox_optimize.sh && ./firefox_backup.sh"
-  7       0     update_adblock  /home/lester/.config/luakit/adblock-update.sh
+  7       0     firefox_bk sh -c "cd $HOME/Admin/firefoxbackup/script; ./firefox_optimize.sh && ./firefox_backup.sh"
+  7       0     update_adblock  sh -c "$HOME/.config/luakit/adblock-update.sh"
 
