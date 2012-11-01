@@ -102,6 +102,60 @@ if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
     . /etc/bash_completion
 fi
 
+if [ "$TERM" == "linux" ]; then
+    # Use solarized colors
+    S_base03='002b36'
+    S_base02='073642'
+    S_base01='586e75'
+    S_base00='657b83'
+    S_base0='839496'
+    S_base1='93a1a1'
+    S_base2='eee8d5'
+    S_base3='fdf6e3'
+    S_yellow='b58900'
+    S_orange='cb4b16'
+    S_red='dc322f'
+    S_magenta='d33682'
+    S_violet='6c71c4'
+    S_blue='268bd2'
+    S_cyan='2aa198'
+    S_green='859900'
+
+    # black dark/light
+    echo -en "\e]P0$S_base02"
+    echo -en "\e]P8$S_base03"
+
+    # red dark/light
+    echo -en "\e]P1$S_red"
+    echo -en "\e]P9$S_orange"
+
+    # green dark/light
+    echo -en "\e]P2$S_green"
+    echo -en "\e]PA$S_base01"
+
+    # yellow dark/light
+    echo -en "\e]P3$S_yellow"
+    echo -en "\e]PB$S_base00"
+
+    # blue dark/light
+    echo -en "\e]P4$S_blue"
+    echo -en "\e]PC$S_base0"
+
+    # magenta dark/light
+    echo -en "\e]P5$S_magenta"
+    echo -en "\e]PD$S_violet"
+
+    # cyan dark/light
+    echo -en "\e]P6$S_cyan"
+    echo -en "\e]PE$S_base1"
+
+    # white dark/light
+    echo -en "\e]P7$S_base2"
+    echo -en "\e]PF$S_base3"
+    clear # for backgroud artifact
+fi
+
+
 # remove all the duplicate lines from history preserving latest
 # commands
 remove_dup="$(cat <<python
