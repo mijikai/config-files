@@ -1,8 +1,8 @@
 # Set up the prompt
 
-autoload -Uz promptinit
-promptinit
-prompt fire black black black orange orange
+autoload -Uz colors && colors
+PROMPT="%{$fg[green]%}[%l] $fg[cyan]%n@%m %#: $fg[blue]%~${reset_color}
+\$ "
 
 setopt histignorealldups histsavenodups histignorespace histreduceblanks appendhistory
 
