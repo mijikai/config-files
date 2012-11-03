@@ -4,7 +4,7 @@ autoload -Uz promptinit
 promptinit
 prompt adam1
 
-setopt histignorealldups sharehistory histsavenodups histignorespace
+setopt histignorealldups histsavenodups histignorespace histreduceblanks appendhistory
 
 # Use vi keybindings
 bindkey -v
