@@ -1,10 +1,11 @@
 # Set up the prompt
 
 autoload -Uz colors && colors
-PROMPT="%{$fg[green]%}[%l] $fg[cyan]%n@%m %#: $fg[blue]%~${reset_color}
-\$ "
+PROMPT='%{$fg[green]%}[%l] $fg[cyan]%n@%m %#: $fg[blue]%~${reset_color}
+\$ '
 
 setopt histignorealldups histsavenodups histignorespace histreduceblanks appendhistory
+setopt promptsubst
 
 # Use vi keybindings
 bindkey -v
