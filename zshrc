@@ -61,4 +61,40 @@ alias l='ls -CF'
 #   sleep 10; alert
 alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
 
+# System maintenance alias
+existexec() {
+    local execpath=$(which "$1" 2> /dev/null) && [ -x "$execpath" ]
+    return $?
+}
+
+if existexec aptitude; then
+    alias upgrade='sudo aptitude safe-upgrade'
+elif existexec apt-get; then
+    alias upgrade='sudo apt-get upgrade'
+elif existexec yaourt; then
+    upgrade() {
+        sudo sh -c 'etckeeper vcs add . && etckeeper vcs commit -m "Save uncommited changes"'
+        yaourt -Syua && yaourt -C && sudo sh -c 'etckeeper vcs add . && etckeeper commit'
+    }
+elif existexec pacman; then
+    upgrade() {
+        sudo sh -c 'etckeeper vcs add . && etckeeper vcs commit -m "Save uncommited changes"'
+        sudo pacman -Syu
+        sudo zsh -c '
+        for config in $(find /etc -type f -name "*.pacnew"); do
+            vimdiff "${config%\.*}" "$config"
+            while true; do
+                read -p " Delete \""$config"\"? (Y/n): " Yn
+                case $Yn in
+                  [Yy]* ) sudo rm "$config" && \
+                          echo " Deleted \""$config"\"."
+                          break                         ;;
+                  [Nn]* ) break                         ;;
+                  *     ) echo " Answer (Y)es or (n)o." ;;
+                esac
+            done
+        done'
+    }
+fi
+
 fortune -c | fmt -80 -s | cowsay -$(shuf -n 1 -e b d g p s t w y) -f $(shuf -n 1 -e $(cowsay -l | tail -n +2)) -n
