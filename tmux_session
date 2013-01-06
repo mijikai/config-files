@@ -1,4 +1,8 @@
-neww 'exec cmus'
+neww 'mpd --kill; mpd; ncmpcpp -s visualizer'
+split-window -v 'ncmpcpp'
+select-pane -t 0
+split-window -h 'ncmpcpp'
+run-shell 'echo "l " | tmux load-buffer -; tmux paste-buffer \; select-pane -t 2'
 neww 'exec vim'
 neww 'exec ipython3'
 neww 'exec racket'
