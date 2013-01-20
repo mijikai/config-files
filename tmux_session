@@ -1,10 +1,15 @@
-neww 'mpd --kill; mpd; ncmpcpp -s visualizer'
-split-window -v 'ncmpcpp'
-select-pane -t 0
-split-window -h 'ncmpcpp'
-run-shell 'echo "l " | tmux load-buffer -; tmux paste-buffer \; select-pane -t 2'
-neww 'exec vim'
-neww 'exec ipython3'
-neww 'exec racket'
-neww 'exec ghci'
-select-window -t 0
+#!/bin/sh
+mpd --kill
+mpd
+tmux neww 'ncmpcpp -s visualizer'
+tmux split-window -v 'ncmpcpp'
+tmux select-pane -t 0
+tmux split-window -h 'ncmpcpp'
+echo 'l ' | tmux load-buffer -
+tmux paste-buffer -t 1.1
+tmux select-pane -t 1.2
+tmux neww 'exec vim'
+tmux neww 'exec ipython3'
+tmux neww 'exec racket'
+tmux neww 'exec ghci'
+tmux select-window -t 0
