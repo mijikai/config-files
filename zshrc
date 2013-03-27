@@ -84,4 +84,8 @@ elif existexec yaourt; then
     }
 fi
 
+if existexec aria2c; then
+    alias aria2c='aria2c -d ~/Downloads'
+fi
+
 fortune -c | fmt -80 -s | cowsay -$(shuf -n 1 -e b d g p s t w y) -f $(shuf -n 1 -e $(cowsay -l | tail -n +2)) -n
