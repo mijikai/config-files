@@ -71,29 +71,16 @@ if existexec aptitude; then
     alias upgrade='sudo aptitude safe-upgrade'
 elif existexec apt-get; then
     alias upgrade='sudo apt-get upgrade'
-elif existexec yaourt; then
-    upgrade() {
-        sudo sh -c 'etckeeper vcs add . && etckeeper vcs commit -m "Save uncommited changes"'
-        yaourt -Syua && yaourt -C && sudo sh -c 'etckeeper vcs add . && etckeeper commit'
-    }
 elif existexec pacman; then
     upgrade() {
-        sudo sh -c 'etckeeper vcs add . && etckeeper vcs commit -m "Save uncommited changes"'
-        sudo pacman -Syu
-        sudo zsh -c '
-        for config in $(find /etc -type f -name "*.pacnew"); do
-            vimdiff "${config%\.*}" "$config"
-            while true; do
-                read -p " Delete \""$config"\"? (Y/n): " Yn
-                case $Yn in
-                  [Yy]* ) sudo rm "$config" && \
-                          echo " Deleted \""$config"\"."
-                          break                         ;;
-                  [Nn]* ) break                         ;;
-                  *     ) echo " Answer (Y)es or (n)o." ;;
-                esac
-            done
-        done'
+        sudo sh -c "etckeeper pre-install; pacman -Syu; pacdiffviewer; etckeeper post-install"
+    }
+elif existexec yaourt; then
+    upgrade() {
+        sudo etckeeper pre-install
+        yaourt -Syua
+        sudo pacdiffviewer
+        sudo etckeeper post-install
     }
 fi
 
