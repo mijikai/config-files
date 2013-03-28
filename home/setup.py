@@ -22,6 +22,7 @@ ln_s = process_func_maker(*'ln -s'.split())
 
 config_files = {
         'anacrontab'                   : '~/.anacron/anacrontab',
+        'anacron.sh'                   : ['~/.anacron/anacron.sh', '~/.config/autostart'],
         'bashrc'                       : '~/.bashrc',
         'elinks.conf'                  : '~/.elinks/elinks.conf',
         'luakitrc.lua'                 : '~/.config/luakit/rc.lua',
@@ -37,13 +38,17 @@ config_files = {
 
 def main():
     base = os.path.abspath(os.path.dirname(__file__))
-    for config, target_path in config_files.items():
+    for config, target_pths in config_files.items():
         # configuration should live with the same folder as this file
         config_path = os.path.join(base, config) 
-        target_path = os.path.expanduser(target_path)
-        folder = os.path.dirname(target_path)
-        mkdir_p(folder)
-        ln_s(config_path, target_path)
+        if isinstance(target_pths, str):
+            target_pths = [target_pths]
+
+        for target_path in target_pths:
+            target_path = os.path.expanduser(target_path)
+            folder = os.path.dirname(target_path)
+            mkdir_p(folder)
+            ln_s(config_path, target_path)
 
 if __name__ == '__main__':
     main()
