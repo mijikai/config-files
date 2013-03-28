@@ -22,7 +22,7 @@ ln_s = process_func_maker(*'ln -s'.split())
 
 config_files = {
         'anacrontab'                   : '~/.anacron/anacrontab',
-        'anacron.sh'                   : '~/.anacron/anacron.sh',
+        'anacron.sh'                   : ['~/.anacron/anacron.sh', '~/.config/autostart'],
         'bashrc'                       : '~/.bashrc',
         'elinks.conf'                  : '~/.elinks/elinks.conf',
         'luakitrc.lua'                 : '~/.config/luakit/rc.lua',
