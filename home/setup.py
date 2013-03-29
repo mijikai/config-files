@@ -32,6 +32,7 @@ config_files = {
         'tmux.conf'                    : '~/.tmux.conf',
         'vim-bundles.vim'              : '~/.vim/vim-bundles.vim',
         'vimrc'                        : '~/.vimrc',
+        'zkbd'                         : '~/.zkbd',
         'zshrc'                        : '~/.zshrc',
 }
 
