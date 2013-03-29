@@ -10,9 +10,9 @@ setopt promptsubst
 # Use vi keybindings
 bindkey -v
 
-# Keep 10000 lines of history within the shell and save it to ~/.zsh_history:
-HISTSIZE=10000
-SAVEHIST=20000
+# Keep many lines of history within the shell and save it to ~/.zsh_history:
+HISTSIZE=30000
+SAVEHIST=30000
 HISTFILE=~/.zsh_history
 
 # enable color support of ls and also add handy aliases
