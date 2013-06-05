@@ -19,19 +19,19 @@ def process_func_maker(*head):
 mkdir_p = process_func_maker(*'mkdir -p'.split())
 ln_s = process_func_maker(*'ln -s'.split())
 
-exceptions = ('setup.py', 'tmux_session')
+ignore_files = ('setup.py', 'tmux_session')
 
 
 def main():
     base = os.path.abspath(os.path.dirname(__file__))
 
-    exceptions_expanded = tuple(os.path.join(base, i) for i in exceptions)
+    absolute_ignore_files = tuple(os.path.join(base, i) for i in ignore_files)
     files = []
     for dirpath, _, filenames in os.walk(base):
         for f in filenames:
             files.append(os.path.join(dirpath, f))
 
-    config_files = tuple(set(files) - set(exceptions_expanded))
+    config_files = tuple(set(files) - set(ignore_files))
     home_path = os.path.expanduser('~/')
 
     for config_path in config_files:
