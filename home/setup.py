@@ -19,11 +19,11 @@ def process_func_maker(*head):
 mkdir_p = process_func_maker(*'mkdir -p'.split())
 ln_s = process_func_maker(*'ln -s'.split())
 
-ignore_files = ('setup.py', 'tmux_session')
-
-
 def main():
     base = os.path.abspath(os.path.dirname(__file__))
+
+    with open('ignorefiles') as f:
+        ignore_files = list(i[:-1] for i in f.readline())
 
     absolute_ignore_files = tuple(os.path.join(base, i) for i in ignore_files)
     files = []
