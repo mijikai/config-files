@@ -1,1 +1,0 @@
-../../.anacron/anacron.sh
