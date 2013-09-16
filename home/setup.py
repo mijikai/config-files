@@ -23,7 +23,7 @@ def main():
     base = os.path.abspath(os.path.dirname(__file__))
 
     with open('ignorefiles') as f:
-        ignore_files = list(i[:-1] for i in f.readline())
+        ignore_files = list(i[:-1] for i in f)
 
     absolute_ignore_files = tuple(os.path.join(base, i) for i in ignore_files)
     files = []
@@ -31,7 +31,7 @@ def main():
         for f in filenames:
             files.append(os.path.join(dirpath, f))
 
-    config_files = tuple(set(files) - set(ignore_files))
+    config_files = tuple(set(files) - set(absolute_ignore_files))
     home_path = os.path.expanduser('~/')
 
     for config_path in config_files:
