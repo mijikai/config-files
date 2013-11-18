@@ -84,23 +84,6 @@ existexec() {
     return $?
 }
 
-if existexec aptitude; then
-    alias upgrade='sudo aptitude safe-upgrade'
-elif existexec apt-get; then
-    alias upgrade='sudo apt-get upgrade'
-elif existexec pacman; then
-    upgrade() {
-        sudo sh -c "etckeeper pre-install; pacman -Syu; pacdiffviewer; etckeeper post-install"
-    }
-elif existexec yaourt; then
-    upgrade() {
-        sudo etckeeper pre-install
-        yaourt -Syua
-        sudo pacdiffviewer
-        sudo etckeeper post-install
-    }
-fi
-
 if existexec aria2c; then
     alias aria2c='aria2c -d ~/Downloads'
 fi
