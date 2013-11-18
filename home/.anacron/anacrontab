@@ -1,5 +1,5 @@
 # period   delay job-id     command
   7       0     firefox_bk sh -c "cd /media/files/Admin/firefoxbackup/script; ./firefox_optimize.sh && ./firefox_backup.sh"
-  7       0     update_adblock  sh "$HOME/.config/luakit/adblock-update.sh"
+  7       0     update_adblock sh -c 'curl https://easylist-downloads.adblockplus.org/easylist.txt -o ~/.local/share/luakit/adblock/easylist.txt'
   1       0     anki_backup sh "/media/files/Anki/User 1/script/anki_backup.sh"
 
