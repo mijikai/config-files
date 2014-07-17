@@ -1,0 +1,7 @@
+[user]
+	name = lester
+	email = tkhdlstfl.l+git@gmail.com
+[push]
+	default = simple
+[core]
+	editor = vim
