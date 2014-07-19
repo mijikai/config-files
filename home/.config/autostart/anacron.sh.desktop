@@ -1,4 +1,0 @@
-[Desktop Entry]
-Type=Application
-Name=anacron.sh
-Exec=bash -c '${HOME}/bin/anacron.sh'
