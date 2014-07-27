@@ -35,7 +35,7 @@ set smartindent  " Indent automatically
 set shiftwidth=4  " One tab equals four spaces
 set expandtab  " Convert tab to spaces
 set scrolloff=3  " Ensure that the cursor will not need to go to the edge to scroll
-set history=100000  " Have a very long history
+set history=10000  " Have a very long history
 
 set showcmd
 set hidden  " Enable the change of visible buffer even if the current has been modified
