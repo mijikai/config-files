@@ -20,10 +20,6 @@ endif
 set nocompatible  " Disable compatibility with vi so that plugins will work
 filetype off  " Disable first filetype detection for vundle plugin
 
-" Add vundle to the runtime path using the user's vimfiles
-let bundle_folder=split(&rtp, ',')[0] . '/bundle'
-exec 'set rtp+=' . bundle_folder . '/vundle'
-call vundle#rc(bundle_folder)  " Initialize vundle for loading of other plugins
 runtime vim-bundles.vim  " Load the plugins
 
 exec 'set rtp+=' . bundle_folder . '/vim-pathogen/'

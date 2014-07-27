@@ -1,27 +1,34 @@
+" Add vundle to the runtime path using the user's vimfiles
+let bundle_folder=split(&rtp, ',')[0] . '/bundle'
+exec 'set rtp+=' . bundle_folder . '/vundle'
+
+call vundle#begin(bundle_folder)
 " Plugin manager
-Bundle 'gmarik/vundle'
+Plugin 'gmarik/vundle'
 
-" My other bundles
-Bundle 'Lokaltog/vim-easymotion'
-Bundle 'altercation/vim-colors-solarized'
-Bundle 'chrisbra/SudoEdit.vim'
-Bundle 'ervandew/supertab'
-Bundle 'godlygeek/tabular'
-Bundle 'jpalardy/vim-slime'
-Bundle 'scrooloose/nerdtree'
-Bundle 'sjl/gundo.vim'
-Bundle 'tomtom/tcomment_vim'
-Bundle 'tpope/vim-abolish'
-Bundle 'tpope/vim-fugitive'
-Bundle 'tpope/vim-pathogen'
-Bundle 'tpope/vim-repeat'
-Bundle 'tpope/vim-surround'
-Bundle 'tpope/vim-unimpaired'
-Bundle 'vim-scripts/YankRing.vim'
-Bundle 'vim-scripts/bufkill.vim'
-Bundle 'vim-scripts/javacomplete'
-Bundle 'vim-scripts/pep8'
-Bundle 'wlangstroth/vim-racket'
-Bundle 'zaiste/tmux.vim'
+" Other plugins
+Plugin 'Lokaltog/vim-easymotion'
+Plugin 'altercation/vim-colors-solarized'
+Plugin 'chrisbra/SudoEdit.vim'
+Plugin 'ervandew/supertab'
+Plugin 'godlygeek/tabular'
+Plugin 'jpalardy/vim-slime'
+Plugin 'scrooloose/nerdtree'
+Plugin 'sjl/gundo.vim'
+Plugin 'tomtom/tcomment_vim'
+Plugin 'tpope/vim-abolish'
+Plugin 'tpope/vim-fugitive'
+Plugin 'tpope/vim-pathogen'
+Plugin 'tpope/vim-repeat'
+Plugin 'tpope/vim-surround'
+Plugin 'tpope/vim-unimpaired'
+Plugin 'vim-scripts/YankRing.vim'
+Plugin 'vim-scripts/bufkill.vim'
+Plugin 'vim-scripts/javacomplete'
+Plugin 'vim-scripts/pep8'
+Plugin 'wlangstroth/vim-racket'
+Plugin 'zaiste/tmux.vim'
 
-Bundle 'git://vim-latex.git.sourceforge.net/gitroot/vim-latex/vim-latex' 
+Plugin 'git://vim-latex.git.sourceforge.net/gitroot/vim-latex/vim-latex'
+
+call vundle#end()
