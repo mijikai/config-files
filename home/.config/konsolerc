@@ -1,0 +1,20 @@
+[Desktop Entry]
+DefaultProfile=Tmux.profile
+
+[Favorite Profiles]
+Favorites=Shell.profile,Tmux.profile
+
+[KonsoleWindow]
+ShowMenuBarByDefault=false
+
+[MainWindow]
+MenuBar=Disabled
+State=AAAA/wAAAAD9AAAAAAAABVYAAALRAAAABAAAAAQAAAAIAAAACPwAAAAA
+ToolBarsMovable=Disabled
+Window-Maximized 768x1366=true
+
+[Notification Messages]
+CloseAllTabs=true
+
+[TabBar]
+TabBarVisibility=ShowTabBarWhenNeeded
