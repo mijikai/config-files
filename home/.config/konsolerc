@@ -2,7 +2,7 @@
 DefaultProfile=Tmux.profile
 
 [Favorite Profiles]
-Favorites=Shell.profile,Tmux.profile
+Favorites=Tmux.profile,Shell.profile
 
 [KonsoleWindow]
 ShowMenuBarByDefault=false
